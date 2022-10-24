@@ -1,0 +1,82 @@
+/******************************************************
+1. Colors
+******************************************************/
+.color-body {
+    color:var(--color-body);
+}
+.color-blue {
+    color:var(--color-blue);
+}
+.color-magenta {
+    color:var(--color-magenta);
+}
+.color-grey-dark {
+    color:var(--color-grey-dark);
+}
+.color-grey-light {
+    color:var(--color-grey-light);
+}
+.color-error {
+    color:var(--color-error);
+}
+.color-success {
+    color:var(--color--success);
+}
+.color-white {
+    color:var(--color-white);
+}
+.color-black {
+    color:var(--color-black);
+}
+
+/********************************************************
+2. Font Variants
+********************************************************/
+.fw-light {
+    font-weight:300;
+}
+.fw-regular {
+    font-weight:400;
+}
+.fw-bold {
+    font-weight:600;
+}
+
+/********************************************************
+3. Alignments
+********************************************************/
+.txt-align-center {
+    text-align:center; 
+}
+.txt-align-left {
+    text-align:left;
+}
+.txt-align-right {
+    text-align:right;
+}
+
+
+/********************************************************
+4. Elements
+********************************************************/
+
+/* Simple/Default Logo App */
+.logo-app {
+    font-size:32px;
+    font-weight:600;
+}
+
+/* Simple/Default Navigation */
+nav:not(.custom) ul {
+    list-style:none;
+}
+nav:not(.custom) ul li {
+    display:inline-block;
+    padding:0 8px;
+}
+
+nav:not(.custom) ul li a {
+    text-decoration:none;
+    color:var(--color-body);
+    font-size:14px;
+}

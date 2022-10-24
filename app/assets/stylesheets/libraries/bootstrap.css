@@ -8,7 +8,8 @@
  .container-md,
  .container-lg,
  .container-xl {
-   width: 100%;
+   width:auto;
+   max-width:100%;
    padding-right: 15px;
    padding-left: 15px;
    margin-right: auto;
@@ -72,6 +73,7 @@
    width: 100%;
    padding-right: 15px;
    padding-left: 15px;
+   box-sizing:border-box;
  }
  
  .col {
