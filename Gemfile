@@ -35,6 +35,8 @@ gem 'bootstrap', '~> 5.2', '>= 5.2.2'
 gem "simple_form"
 gem "simple-form-datepicker"
 
+gem 'devise'
+
 
 
 
