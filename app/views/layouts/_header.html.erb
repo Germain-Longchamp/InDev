@@ -10,16 +10,29 @@
       </div>
       <div class="col-lg-6">
         <div class="header__actions">
+        <% if user_signed_in? %>
           <nav>
             <ul>
               <li>
-                <a href="">Se connecter</a>
+                <a href="">Mes projets</a>
               </li>
               <li>
-                <a href="">Créer un compte</a>
+                <%= link_to raw('Se déconnecter'), destroy_user_session_path, method: :delete %>
               </li>
             </ul>
           </nav>
+          <% else %>
+          <nav>
+            <ul>
+              <li>
+                <a href="/users/sign_in">Se connecter</a>
+              </li>
+              <li>
+                <a href="/users/sign_up">Créer un compte</a>
+              </li>
+            </ul>
+          </nav>
+          <% end %>
         </div>
       </div>
     </div>
@@ -27,21 +40,3 @@
 </div>
 
 
-<!-- Provisoire -->
-<div style="border-top:2px solid red;"></div>
-Clients
-<ul>
-  <li>
-    <a href="/clients">Clients</a>
-    <a href="/clients/new">Ajouter un client</a>
-  </li>
-</ul>
-Companies
-<ul>
-  <li>
-    <a href="/companies">Companies</a>
-    <a href="/companies/new">Ajouter une comany</a>
-  </li>
-</ul>
-
-<div style="border-bottom:2px solid red;"></div>

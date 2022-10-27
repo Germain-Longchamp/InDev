@@ -1,12 +1,19 @@
+/*
+    DEFAULT
+*/
 .btn {
     display:inline-block;
+    text-decoration:none;
     background:var(--color-body);
     color:var(--color-white);
     padding:8px 24px;
     border-radius:50px;
     font-weight:300;
     cursor:pointer;
+    transition:all .3s ease;
+    transition-property: transform, background;
 }
+
 
 
 /*
@@ -16,9 +23,22 @@
     background:var(--color-blue);
 }
 
+@media (min-width:992px) {
+    .btn.btn--blue-solid:hover {
+        background:var(--color-blue-dark);
+    }
+}
+
 .btn.btn--magenta-solid {
     background:var(--color-magenta);
 }
+
+@media (min-width:992px) {
+    .btn.btn--magenta-solid:hover {
+        background:var(--color-magenta-dark);;
+    }
+}
+
 
 
 /*
@@ -31,4 +51,15 @@
 .btn.btn--small {
     font-size:14px;
     padding:6px 16px;
+}
+
+
+
+/*
+    ANIMATIONS
+*/
+@media (min-width:992px) {
+    .btn.btn--up-animate:hover {
+        transform:translateY(-2px);
+    }
 }
