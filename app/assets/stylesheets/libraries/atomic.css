@@ -257,6 +257,9 @@
     font-size:32px;
     font-weight:600;
 }
+.logo-app a {
+    text-decoration:none;
+}
 
 /* Simple/Default Navigation */
 nav:not(.custom) ul {
