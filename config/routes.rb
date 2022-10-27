@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  # Route to Home
+  # Route Home
   root to: 'home#index'
 
   # Routes Clients
   resources :clients
+
+  # Routes Companies
+  resources :companies
 end
