@@ -1,0 +1,10 @@
+.sec-home-index {
+    display:flex; 
+    align-items:center; 
+    justify-content:center;
+    height:calc(100vh - 61px);
+
+    .container {
+        width:100%;
+    }
+}

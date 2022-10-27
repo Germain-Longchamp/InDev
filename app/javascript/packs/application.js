@@ -10,5 +10,10 @@ require("channels")
 //= require_tree .
 
 
+import "../scripts/main.js"
 
-import "../scripts/welcome.js"
+
+
+
+
+

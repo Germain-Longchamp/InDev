@@ -13,3 +13,6 @@
 
 /*--Import Partials--*/
 @import "partials/header";
+
+/*--Import Components--*/
+@import "components/buttons";
