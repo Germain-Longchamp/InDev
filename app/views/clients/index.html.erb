@@ -1,0 +1,7 @@
+<h1>Clients List</h1>
+
+<ul>
+    <% @clients.each do |client| %>
+    <li><%= client.name %> | <%= link_to 'Supprimer', client, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+    <% end %>
+</ul>
