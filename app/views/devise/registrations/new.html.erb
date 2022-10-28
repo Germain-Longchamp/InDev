@@ -1,25 +1,66 @@
-<h2>Sign up</h2>
+<div class="step1">
+  <h2>Créer votre entreprise</h2>
+  <form id="createCompany">
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= f.error_notification %>
+      <label>Raison sociale</label>
+      <input type="text" id="company_name" name="company[name]" required>
 
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: true,
-                autofocus: true,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+      <label>Adresse</label>
+      <input type="text" id="company_address" name="company[address]" class="form-control" required>
+
+      <label>Ville</label>
+      <input type="text" id="company_city" name="company[city]" required>
+
+
+
+      <label>Code postal</label>
+      <input type="text" id="company_zip" name="company[zip]" required>
+
+
+
+      <label>Pays</label>
+      <input type="text" id="company_country" name="company[country]" required>
+
+
+
+      <input type="submit" value="Étape suivante" name="commit">
+
+
+  </form>
+</div>
+
+
+
+
+<div class="step2" style="display:none;">
+  <h2>Créer compte utilisateur</h2>
+
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= f.error_notification %>
+
+    <div class="form-inputs">
+      <%= f.input :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.input :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.input :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.hidden_field :company_id,
+                  as: :numeric %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Sign up" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+
+</div>

@@ -9,9 +9,11 @@ require("channels")
 //= require jquery_ujs
 //= require_tree .
 
+import $ from 'jquery';
+global.$ = jQuery;
 
 import "../scripts/main.js"
-
+import "../scripts/create-account.js"
 
 
 
