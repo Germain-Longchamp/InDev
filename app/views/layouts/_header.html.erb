@@ -17,6 +17,9 @@
                 <a href="">Mes projets</a>
               </li>
               <li>
+                <a href="<%= edit_user_registration_path %>">Mon compte</a>
+              </li>
+              <li>
                 <%= link_to raw('Se déconnecter'), destroy_user_session_path, method: :delete %>
               </li>
             </ul>
@@ -25,10 +28,10 @@
           <nav>
             <ul>
               <li>
-                <a href="/users/sign_in">Se connecter</a>
+                <a href="/account/sign_in">Se connecter</a>
               </li>
               <li>
-                <a href="/users/sign_up">Créer un compte</a>
+                <a href="/account/sign_up">Créer un compte</a>
               </li>
             </ul>
           </nav>
