@@ -5,6 +5,8 @@
         <div class="logo-app">
           <a href="/">
             <span class="color-magenta">In</span><span class="color-blue">Dev</span>
+            <span class="idea-mention">par <img src="https://www.ideagency.fr/hubfs/00_SITE%202022/BRAND%20Assets%202022/favicon-mexico.svg"></span>
+            
           </a>
         </div>
       </div>
@@ -14,7 +16,7 @@
           <nav>
             <ul>
               <li>
-                <a href="">Mes projets</a>
+                <a href="<%= board_path %>">Tableau de bord</a>
               </li>
               <li>
                 <a href="<%= edit_user_registration_path %>">Mon compte</a>
@@ -28,10 +30,10 @@
           <nav>
             <ul>
               <li>
-                <a href="/account/sign_in">Se connecter</a>
+                <a href="<%= new_user_session_path %>">Se connecter</a>
               </li>
               <li>
-                <a href="/account/sign_up">Créer un compte</a>
+                <a href="<%= new_user_registration_path %>">Créer un compte</a>
               </li>
             </ul>
           </nav>

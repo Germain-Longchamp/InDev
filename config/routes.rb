@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # Route Home
   root to: 'home#index'
 
+  # Route Board
+  get 'board', to: 'board#index'
+
   # Routes Users
   devise_for :users, :path => 'account'
   resources :users
