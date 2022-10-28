@@ -1,14 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/new'
-  get 'users/edit'
-  get 'users/create'
-  get 'users/update'
-  get 'users/destroy'
-  devise_for :users
   # Route Home
   root to: 'home#index'
+
+  # Routes Users
+  devise_for :users, :path => 'account'
+  resources :users
 
   # Routes Clients
   resources :clients
