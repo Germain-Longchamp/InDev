@@ -3,10 +3,16 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="logo-app">
-          <a href="/">
+          <% @logoLink = '' %>
+          <% if user_signed_in? %>
+            <% @logoLink = board_path %>
+          <% else %>
+            <% @logoLink = root_path %>
+          <% end %>
+
+          <a href="<%== @logoLink %>">
             <span class="color-magenta">In</span><span class="color-blue">Dev</span>
             <span class="idea-mention">par <img src="https://www.ideagency.fr/hubfs/00_SITE%202022/BRAND%20Assets%202022/favicon-mexico.svg"></span>
-            
           </a>
         </div>
       </div>
