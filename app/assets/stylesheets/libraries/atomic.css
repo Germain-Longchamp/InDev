@@ -291,3 +291,37 @@ nav:not(.custom) ul li a {
     color:var(--color-body);
     font-size:14px;
 }
+
+.info-number {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    background:var(--color-magenta);
+    color:var(--color-white);
+    font-weight:400;
+    font-size:14px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    margin-left:16px;
+    line-height:1;
+}
+
+/* List Infos */
+ul.list-infos {
+    list-style:none;
+}
+
+ul.list-infos li {
+    font-size:14px;
+    padding:4px 2px;
+    transition:background .3s ease-out;
+}
+
+ul.list-infos li:not(:last-child) {
+    border-bottom:1px solid var(--color-grey-light);
+}
+
+ul.list-infos li:hover {
+    background:var(--color-grey-light);
+}

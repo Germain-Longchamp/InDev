@@ -11,7 +11,7 @@
     --color-blue-dark:#114ebf;
     --color-magenta:#F02B6F;
     --color-magenta-dark:#cc1655;
-    --color-grey-dark:#54595c;
+    --color-grey-dark:#6b7073;
     --color-grey-light:#ebf2f5;
     --color-error:#cc1b3b;
     --color-success:#1da849;
@@ -58,6 +58,7 @@ body {
 h1 {
     font-size:var(--font-size-xs-h1);
     line-height:1.3;
+    color:var(--color-blue);
 }
 h2 {
     font-size:var(--font-size-xs-h2);

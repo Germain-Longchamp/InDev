@@ -1,0 +1,9 @@
+.sec-layout {
+    padding:40px;
+    background:var(--color-grey-light);
+    min-height:calc(100vh - 200px);
+}
+
+.sec-layout h1 {
+    font-size:28px;
+}

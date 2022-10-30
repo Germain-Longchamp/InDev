@@ -1,9 +1,11 @@
 class ClientsController < ApplicationController
+    before_action :authenticate_user!
     before_action :set_client, only: %i[ show edit update destroy ]
 
     # GET /clients or /clients.json
     def index
-        @clients = Client.all
+        # Get All Clients from Current_User's Company
+        @clients = Client.where(:company_id => current_user.company_id).all
     end
 
     # GET /clients/1 or /clients/1.json
@@ -23,6 +25,7 @@ class ClientsController < ApplicationController
     # POST /clients or /clients.json
     def create
         @client = Client.new(client_params)
+        @client.company_id = current_user.company_id
 
         respond_to do |format|
             if @client.save
@@ -65,6 +68,6 @@ class ClientsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def client_params
-      params.require(:client).permit(:name)
+      params.require(:client).permit(:name, :company_id)
     end
 end
