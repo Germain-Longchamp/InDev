@@ -292,6 +292,7 @@ nav:not(.custom) ul li a {
     font-size:14px;
 }
 
+
 .info-number {
     display:inline-flex;
     justify-content: center;
@@ -299,9 +300,10 @@ nav:not(.custom) ul li a {
     background:var(--color-magenta);
     color:var(--color-white);
     font-weight:400;
-    font-size:14px;
-    width:20px;
-    height:20px;
+    font-size:16px;
+    font-weight:300;
+    width:24px;
+    height:24px;
     border-radius:50%;
     margin-left:16px;
     line-height:1;
