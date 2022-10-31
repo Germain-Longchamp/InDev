@@ -1,7 +1,36 @@
-<h1>Clients List</h1>
+<section class="sec-layout sec-clients-index">
+    <div class="container">
+        <div class="row mb40">
+            <div class="col-12">
+                <h1>Clients</h1>
+            </div>
+        </div>
+    </div>
 
-<ul>
-    <% @clients.each do |client| %>
-    <li><%= client.name %> | <%= link_to 'Supprimer', client, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-    <% end %>
-</ul>
+    <div class="container">
+        <div class="row">
+            <% @clients.each do |client| %>
+                <div class="col-12 col-md-6 col-lg-2">
+                    <a class="card-client1" href="" title="<%= client.name %>">
+                        <div class="card-client1__exerg">
+                            <span>
+                                <%= client.name.truncate(2, omission: '') %>
+                            </span>
+                        </div>
+                        <div class="card-client1__infos">
+                            <h4><%= client.name %></h4>
+
+                            <div class="card-client1__designs">
+                                <span>0</span> maquettes disponibles
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- 
+                <%= link_to 'Supprimer', client, method: :delete, data: { confirm: 'Are you sure?' } %>
+                -->
+            <% end %>
+        </div>
+    </div>
+</section>
+
