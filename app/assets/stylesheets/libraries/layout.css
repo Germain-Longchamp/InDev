@@ -6,4 +6,5 @@
 
 .sec-layout h1 {
     font-size:28px;
+    color:var(--color-blue);
 }
