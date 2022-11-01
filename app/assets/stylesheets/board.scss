@@ -15,3 +15,23 @@
     position:absolute;
     right:20px;
 }
+.board-info-card__infos ul {
+    max-height:130px;
+    overflow-y:scroll;
+}
+
+
+.board-info-card__infos ul::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 4px;
+}
+  
+.board-info-card__infos ul::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: var(--color-grey-half);
+}
+  
+.board-info-card__infos ul::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background:var(--color-grey-light);
+}

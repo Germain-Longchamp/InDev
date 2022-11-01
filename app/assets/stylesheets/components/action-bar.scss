@@ -1,3 +1,11 @@
+.action-bar {
+    display:flex;
+    align-items:center;
+}
+.action-bar__item:not(:last-child) {
+    margin-right:32px;
+}
+
 .change-layout {
     position:relative;
     overflow:hidden;
@@ -15,7 +23,7 @@
     top:0;
     height:100%;
     width:50%;
-    background:var(--color-magenta);
+    background:var(--color-blue);
     transition:left .2s ease;
 }
 
