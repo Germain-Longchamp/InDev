@@ -58,3 +58,86 @@
         opacity:.9;
     }
 }
+
+
+
+
+.card-client2 {
+    display: flex;
+    align-items:center;
+    text-decoration: none;
+    background:var(--color-white);
+    border:1px solid var(--color-white);
+    padding:8px 20px;
+    border-radius:4px;
+    color:var(--color-body);
+    transition:border .2s ease;
+}
+.card-client2__name {
+    flex:0 0 30%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-weight:bold;
+}
+.card-client2__designs {
+    flex:0 0 40%;
+    text-align:center;
+    font-size:12px;
+}
+
+.card-client2__designs span {
+    color:var(--color-magenta);
+    font-weight:bold;
+    font-size:16px;
+}
+
+.card-client2__actions {
+    flex:0 0 30%;
+    display:flex;
+    align-items:center;
+    justify-content: flex-end;
+}
+
+.card-client2__actions a {
+    display:block;
+    height:18px;
+}
+
+.card-client2__actions a:not(:last-child) {
+    margin-right:8px;
+}
+
+.card-client2__actions a svg {
+    height:18px;
+    width:18px;
+}
+
+.card-client2__actions a.delete svg {
+    height:18px;
+    width:18px;
+}
+
+.card-client2__actions a svg path {
+    fill:var(--color-grey-half);
+    transition:fill .2s ease;
+}
+
+@media (min-width:992px) {
+    .card-client2:hover {
+        border:1px solid var(--color-grey-half);
+    }
+    .card-client2__actions {
+        opacity:0;
+        transition:opacity .2s ease;
+    }
+    .card-client2:hover .card-client2__actions {
+        opacity:1;
+    }
+    .card-client2__actions a.show:hover svg path {
+        fill:var(--color-blue);
+    }
+    .card-client2__actions a.delete:hover svg path {
+        fill:var(--color-error);
+    }
+}

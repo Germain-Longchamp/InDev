@@ -5,7 +5,7 @@ class ClientsController < ApplicationController
     # GET /clients or /clients.json
     def index
         # Get All Clients from Current_User's Company
-        @clients = Client.where(:company_id => current_user.company_id).all
+        @clients = Client.where(:company_id => current_user.company_id).all.order('name')
     end
 
     # GET /clients/1 or /clients/1.json

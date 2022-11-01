@@ -18,4 +18,5 @@
 
 /*--Import Components--*/
 @import "components/buttons";
+@import "components/action-bar";
 @import "components/card-client";
