@@ -1,0 +1,19 @@
+.breadcrumbs {
+    margin-bottom:32px;
+}
+.breadcrumbs ul {
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+.breadcrumbs ul li a {
+    font-size:12px;
+}
+.breadcrumbs ul li a:hover {
+    text-decoration: underline;
+}
+.breadcrumbs ul li a svg {
+    height:8px;
+    width:8px;
+}
+
