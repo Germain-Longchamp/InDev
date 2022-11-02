@@ -81,7 +81,7 @@
                             <%= client.name %>
                         </div>
                         <div class="card-client2__designs">
-                            <span>0</span> maquettes disponibles
+                            <span><%= client.designs.length() %></span> maquette<%= 's' if client.designs.length() > 1 %>
                         </div>
                         <div class="card-client2__actions">
                             <%= link_to client_path(client.id), class: 'show' do %>
