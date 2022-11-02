@@ -1,4 +1,4 @@
-console.log('dans crate account')
+//console.log('dans create account')
 
 // -----Script for creating account
 $(document).on('ready turbolinks:load', function () {

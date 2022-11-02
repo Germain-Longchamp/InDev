@@ -14,8 +14,4 @@ global.$ = jQuery;
 
 import "../scripts/main.js"
 import "../scripts/create-account.js"
-
-
-
-
-
+import "../scripts/clients-index.js"

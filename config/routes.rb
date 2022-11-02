@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :designs
   # Route Home
   root to: 'home#index'
 
