@@ -30,7 +30,7 @@ class DesignsController < ApplicationController
     
     respond_to do |format|
       if @design.save
-        format.html { redirect_to design_url(@design), notice: "Design was successfully created." }
+        format.html { redirect_to client_path(@design.client_id), notice: "Design was successfully created." }
         format.json { render :show, status: :created, location: @design }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -57,7 +57,7 @@ class DesignsController < ApplicationController
     @design.destroy
 
     respond_to do |format|
-      format.html { redirect_to designs_url, notice: "Design was successfully destroyed." }
+      format.html { redirect_to client_path(@design.client_id), notice: "Design was successfully destroyed." }
       format.json { head :no_content }
     end
   end

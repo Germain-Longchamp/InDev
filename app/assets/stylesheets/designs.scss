@@ -1,3 +1,6 @@
-// Place all the styles related to the Designs controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.sec-clients-index__error span {
+    display:block;
+    font-size:14px;
+    font-style: italic;
+    color:var(--color-grey-half);
+}
