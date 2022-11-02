@@ -10,3 +10,32 @@
 .header nav ul {
     text-align:right
 }
+
+/* Simple/Default Logo App */
+.logo-app {
+    font-size:32px;
+    font-weight:600;
+    transition:opacity .2s ease;
+}
+.logo-app a {
+    text-decoration:none;
+}
+
+.logo-app__text {
+    letter-spacing: -2px;
+}
+
+.logo-app:hover {
+    opacity:.7;
+}
+
+.idea-mention {
+    font-size:12px;
+    font-weight:300;
+}
+
+.idea-mention img {
+    height:18px;
+    width:auto;
+    margin-left:2px;
+}
