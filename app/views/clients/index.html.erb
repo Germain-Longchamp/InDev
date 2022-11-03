@@ -52,10 +52,12 @@
                             </span>
                         </div>
                         <div class="card-client1__infos">
+                            <%= link_to client_path(client.id), class: 'show' do %>
                             <h4><%= client.name %></h4>
-
+                            <% end %>
+                            
                             <div class="card-client1__designs">
-                                <span>0</span> maquettes disponibles
+                                <span><%= client.designs.length() %></span> maquette<%= 's' if client.designs.length() > 1 %>
                             </div>
                         </div>
                         <div class="card-client1__actions">
@@ -78,7 +80,9 @@
                 <div class="col-12 mb8">
                     <div class="card-client2" href="" title="<%= client.name %>">
                         <div class="card-client2__name">
-                            <%= client.name %>
+                            <%= link_to client_path(client.id), class: 'show' do %>
+                                <%= client.name %>
+                            <% end %>
                         </div>
                         <div class="card-client2__designs">
                             <span><%= client.designs.length() %></span> maquette<%= 's' if client.designs.length() > 1 %>

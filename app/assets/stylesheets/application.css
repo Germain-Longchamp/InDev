@@ -20,4 +20,8 @@
 @import "components/buttons";
 @import "components/action-bar";
 @import "components/breadcrumbs";
+@import "components/panel";
+@import "components/form";
+
+/*--Import Components--Cards --*/
 @import "components/card-client";

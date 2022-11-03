@@ -1,6 +1,35 @@
 //console.log('dans clients index js')
 
 $(document).on('ready turbolinks:load', function () {
+    function createCookie(name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        } else {
+            var expires = "";
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') {
+                c = c.substring(1, c.length);
+            }
+            if (c.indexOf(nameEQ) == 0) {
+                return c.substring(nameEQ.length, c.length);
+            }
+        }
+        return null;
+    }
+
+    function eraseCookie(name) {
+        createCookie(name, "", -1);
+    }
 
     function showClientsGrid() {
         $('#gridLayout').show()
@@ -42,11 +71,13 @@ $(document).on('ready turbolinks:load', function () {
     // Let User change List layout Clients
     $('.change-layout').on('click', function () {
         if ($(this).hasClass('left-choose')) {
-            document.cookie = 'listLayout=list;'
+            createCookie('listLayout', 'list', 1)
             showClientsList()
         } else {
-            document.cookie = 'listLayout=grid;'
+            createCookie('listLayout', 'grid', 1)
             showClientsGrid()
         }
     });
+
+    //console.log(document.cookie)
 });
