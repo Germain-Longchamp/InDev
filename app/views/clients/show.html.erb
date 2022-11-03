@@ -29,7 +29,7 @@
 
             <div class="col-12">
                 <% @designs.each do |design| %>
-                <div>
+                <div class="card-design">
                     <%= design.name%>
                     <a href="<%= design.url  %>" target="_blank">Lien</a>
                     <%= link_to 'Destroy', design, method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -68,11 +68,21 @@
                             <%= simple_form_for(@design) do |f| %>
                                 <%= f.error_notification %>
                                 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-                                    <%= f.input :name %>
-                                    <%= f.input :url %>
-                                    <%= f.hidden_field :client_id, :value => @client.id %>
-                                    <%= f.hidden_field :company_id, :value => current_user.company_id %>
-                                    <%= f.button :submit %>
+                                <div class="form__fieldset">
+                                    <div class="form__input form__input--full">
+                                    <%= f.input :name, :label => 'Nom' %>
+                                    </div>
+                                </div>
+                                <div class="form__fieldset">
+                                    <div class="form__input form__input--full">
+                                    <%= f.input :url, :label => 'Lien' %>
+                                    </div>
+                                </div>
+                                <%= f.hidden_field :client_id, :value => @client.id %>
+                                <%= f.hidden_field :company_id, :value => current_user.company_id %>
+                                <div class="form__actions">
+                                    <%= f.button :submit, :value => 'Ajouter' %>
+                                </div>   
                             <% end %>
                         </div>
                     </div>
