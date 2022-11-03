@@ -9,11 +9,10 @@ function hidePanel() {
     $(this).parents('.panel').removeClass('slided')
 }
 
-
-
 $(document).on('ready turbolinks:load', function () {
     // Show Panel
     $('.js-show-panel').on('click', showPanel);
     // Hide Panel
     $('.panel__close').on('click', hidePanel);
+    $('.panel__overlay').on('click', hidePanel);
 });
