@@ -2,4 +2,5 @@
 
 $(document).on('ready turbolinks:load', function () {
     // do something
+
 });

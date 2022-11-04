@@ -26,7 +26,7 @@ class DesignsController < ApplicationController
     @design = Design.new(design_params)
     @design.company_id = current_user.company_id
     @design.client_id = params[:design][:client_id]
-    @design.company_id = params[:design][:company_id]
+    @design.user_id = params[:design][:user_id]
     
     respond_to do |format|
       if @design.save
@@ -70,6 +70,6 @@ class DesignsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def design_params
-      params.require(:design).permit(:name, :url, :company_id, :client_id)
+      params.require(:design).permit(:name, :url, :company_id, :client_id, :user_id)
     end
 end
