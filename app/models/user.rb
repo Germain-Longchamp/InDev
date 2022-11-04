@@ -6,4 +6,8 @@ class User < ApplicationRecord
   
   belongs_to :company
   has_many :designs
+
+  def fullname
+    return self.firstname + ' ' + self.lastname
+  end
 end

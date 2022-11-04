@@ -4,6 +4,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+    <%= f.input :firstname, required: true, :label => 'Prénom' %>
+    <%= f.input :lastname, required: true, :label => 'Nom' %>
     <%= f.input :email, required: true %>
 
     <%= f.input :company_id, required: true, as: :numeric %>

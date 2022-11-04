@@ -4,8 +4,16 @@ class ClientsController < ApplicationController
 
     # GET /clients or /clients.json
     def index
+        #queryDesign = request.query_parameters[:design]
+
         # Get All Clients from Current_User's Company
-        @clients = Client.where(:company_id => current_user.company_id).all.order('name')
+        @clients = Client.where(:company_id => current_user.company_id).order('name')    
+
+        #if queryDesign.present?
+        #    if queryDesign == 'true'
+        #        @clients = Client.left_joins(:designs).where('designs.id IS NOT NULL').distinct.order('name')  
+        #    end
+        #end
     end
 
     # GET /clients/1 or /clients/1.json
