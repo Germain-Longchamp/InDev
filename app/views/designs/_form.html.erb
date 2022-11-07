@@ -1,14 +1,33 @@
+<div class="form form-create-design">
+    <div class="form__heading">Nouvelle maquette</div>
+    <%= simple_form_for(@design, remote: true, html: { id: :add_design }) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+            <%= f.input :name, :label => 'Nom', required: :true %>
+            </div>
+        </div>
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+            <%= f.input :url, :label => 'Lien', required: :true %>
+            </div>
+        </div>
 
-<%= simple_form_for(@design) do |f| %>
-  <%= f.error_notification %>
-  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <% if request.path.include?('designs') %>
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+                <%= f.association :client, as: :select, collection: Client.where(:company_id => current_user.company_id).order(:id), :label => "Client associé" %>
+            </div>
+        </div>
+        <% else %>
+        <%= f.hidden_field :client_id, :value => @client.id %>
+        <% end %>
 
-  <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :url %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+        <%= f.hidden_field :company_id, :value => current_user.company_id %>
+        <%= f.hidden_field :user_id, :value => current_user.id %>
+        <div class="form__actions">
+            <%= f.button :submit, :value => 'Ajouter' %>
+        </div>   
+    <% end %>
+</div>

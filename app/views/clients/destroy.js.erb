@@ -1,0 +1,5 @@
+$('.card-client__delete').bind('ajax:success', function() {
+	let dataName = $(this).parents('.col-12').attr('data-name')
+	
+	$('.col-12[data-name="' + dataName + '"]').fadeOut();
+});

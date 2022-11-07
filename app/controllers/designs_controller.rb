@@ -6,6 +6,8 @@ class DesignsController < ApplicationController
   def index
     @designs = Design.where(:company_id => current_user.company_id).all
     #.order('name')
+
+    @design = Design.new
   end
 
   # GET /designs/1 or /designs/1.json
@@ -30,6 +32,7 @@ class DesignsController < ApplicationController
     
     respond_to do |format|
       if @design.save
+        format.js
         format.html { redirect_to client_path(@design.client_id), notice: "Design was successfully created." }
         format.json { render :show, status: :created, location: @design }
       else
