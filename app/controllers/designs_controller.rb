@@ -57,6 +57,7 @@ class DesignsController < ApplicationController
     @design.destroy
 
     respond_to do |format|
+      format.js
       format.html { redirect_to client_path(@design.client_id), notice: "Design was successfully destroyed." }
       format.json { head :no_content }
     end
