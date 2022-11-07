@@ -1,0 +1,5 @@
+$('#renderClientsGrid').append('<%= j render 'clientGrid', :client => @client  %>');
+$('#renderClientsList').append('<%= j render 'clientList', :client => @client  %>');
+
+$('.panel').removeClass('slided');
+$('#add_client').trigger("reset");

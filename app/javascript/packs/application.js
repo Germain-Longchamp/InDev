@@ -7,6 +7,7 @@ require("channels")
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
+
 //= require_tree .
 
 import $ from 'jquery';

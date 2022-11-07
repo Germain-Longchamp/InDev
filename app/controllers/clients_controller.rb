@@ -14,6 +14,8 @@ class ClientsController < ApplicationController
         #        @clients = Client.left_joins(:designs).where('designs.id IS NOT NULL').distinct.order('name')  
         #    end
         #end
+
+        @client = Client.new
     end
 
     # GET /clients/1 or /clients/1.json
@@ -39,6 +41,7 @@ class ClientsController < ApplicationController
 
         respond_to do |format|
             if @client.save
+                format.js
                 format.html { redirect_to clients_path, notice: "Client was successfully created." }
                 format.json { render :show, status: :created, location: @client }
             else
@@ -65,6 +68,7 @@ class ClientsController < ApplicationController
     def destroy
         @client.destroy
         respond_to do |format|
+            format.js
             format.html { redirect_to clients_url, notice: "Client was successfully destroyed." }
             format.json { head :no_content }
         end
