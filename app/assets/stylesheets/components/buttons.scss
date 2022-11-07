@@ -108,14 +108,23 @@
     border-radius:4px;
     cursor:pointer;
     transition:background .2s ease;
+
 }
-.btn-add svg {
-    height:12px;
-    width:12px;
-    margin-right:6px;
+.btn-add  {
+    svg {
+        height:12px;
+        width:12px;
+        margin-right:6px;
+
+        path {
+            fill:var(--color-white);
+        }
+    }
 }
-.btn-add svg path {
-    fill:var(--color-white);
+
+.btn-add.btn-add--small {
+    font-size:12px;
+    padding:4px 10px;
 }
 
 

@@ -8,11 +8,15 @@ require("channels")
 //= require jquery.turbolinks
 //= require jquery_ujs
 
-//= require_tree .
+
 
 import $ from 'jquery';
 global.$ = jQuery;
 
+
+//= require_tree .
+
+import "../scripts/cookies.js"
 import "../scripts/main.js"
 import "../scripts/panel.js"
 import "../scripts/create-account.js"
