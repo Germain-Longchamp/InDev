@@ -1,29 +1,76 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Designs</h1>
+<section class="sec-layout sec-clients-index">
+    <div class="container">
+        <div class="row mb40">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="<%= board_path %>">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+                                Tableau de bord
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <h1>Maquettes</h1>
+            </div>
+            <div class="col-4">
+                <div class="txt-align-right">
+                    <%= link_to new_design_path, class: 'btn-add' do %>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                            Nouvelle maquette
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Url</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <div class="container" id="gridLayout" style="display:none;">
+        <div class="row">
+              <% @designs.each do |design| %>
+                <div class="col-lg-3">
+                    <div class="card-design1">
+                        <div class="card-design1__exerg">
+                            <a class="show" href="<%= design.url  %>" target="_blank">
+                                <img src="<%= asset_path 'Adobe_XD_CC_icon.svg.png' %>">
+                            </a>
+                        </div>
+                        <div class="card-design1__infos">
+                            <a class="show" href="<%= design.url  %>" target="_blank">
+                                <h3><%= design.name %></h3>
+                            </a>
+                            <div class="card-design1__client">
+                                  <a href="<%= client_path(design.client.id) %>">
+                                    <%= design.client.name %>
+                                  </a>
+                            </div>
+                            <div class="card-design1__metas">
+                                <div>Ajouté le <%= design.created_at.strftime('%d.%m.%y') %></div>
+                                <% if design.user %>
+                                <div>Par <%= design.user.fullname %></div>
+                                <% end %>
+                            </div>
+                            <div class="card-design1__actions">
 
-  <tbody>
-    <% @designs.each do |design| %>
-      <tr>
-        <td><%= design.name %></td>
-        <td><%= design.url %></td>
-        <td><%= link_to 'Show', design %></td>
-        <td><%= link_to 'Edit', edit_design_path(design) %></td>
-        <td><%= link_to 'Destroy', design, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+                                <a class="show" href="<%= design.url  %>" target="_blank">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M352 96h64c17.7 0 32 14.3 32 32V384c0 17.7-14.3 32-32 32H352c-17.7 0-32 14.3-32 32s14.3 32 32 32h64c53 0 96-43 96-96V128c0-53-43-96-96-96H352c-17.7 0-32 14.3-32 32s14.3 32 32 32zm-7.5 177.4c4.8-4.5 7.5-10.8 7.5-17.4s-2.7-12.9-7.5-17.4l-144-136c-7-6.6-17.2-8.4-26-4.6s-14.5 12.5-14.5 22v72H32c-17.7 0-32 14.3-32 32v64c0 17.7 14.3 32 32 32H160v72c0 9.6 5.7 18.2 14.5 22s19 2 26-4.6l144-136z"/></svg>
+                                    Lien
+                                </a>
 
-<br>
+                                <%= link_to design, method: :delete, remote: :true, class: 'card-design__delete delete', data: { confirm: 'Supprimer la maquette ?' } do  %>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+                                    Supprimer
+                                <% end %>
+                            </div>
+                        </div>                   
+                    </div>
+                </div>
+              <% end %>
+        </div>
+    </div>
 
-<%= link_to 'New Design', new_design_path %>
+</section>
