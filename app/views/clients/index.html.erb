@@ -37,10 +37,6 @@
                             </div>
                         </div>
                     </div>
-                    <!--Add Client action-->
-                    <div class="action-bar__item">
-                        
-                    </div>
                 </div>
             </div>
         </div>
@@ -57,6 +53,16 @@
             <%= render partial: "clientList", collection: @clients, as: :client %>
         </div>
     </div>
+
+    <% if @clients.length == 0 %>
+    <div class="container no-clients">
+        <div class="row">
+            <div class="col-12">
+                <span class="info-msg">Pas de clients enregistrés</span>
+            </div>
+        </div>
+    </div>
+    <% end %>
 
     <div class="panel panel-right" data-panel="add-client">
         <div class="panel__overlay"></div>

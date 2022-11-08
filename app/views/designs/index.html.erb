@@ -35,6 +35,16 @@
         </div>
     </div>
 
+    <% if @designs.length == 0 %>
+    <div class="container no-designs">
+        <div class="row">
+            <div class="col-12">
+                <span class="info-msg">Pas de maquettes ajoutées</span>
+            </div>
+        </div>
+    </div>
+    <% end %>
+
     <div class="panel panel-right" data-panel="add-design">
         <div class="panel__overlay"></div>
         <div class="panel__column">

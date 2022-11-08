@@ -13,21 +13,39 @@
             <%= f.input :url, :label => 'Lien', required: :true %>
             </div>
         </div>
-
+        
+        
         <% if request.path.include?('designs') %>
-        <div class="form__fieldset">
-            <div class="form__input form__input--full">
-                <%= f.association :client, as: :select, collection: Client.where(:company_id => current_user.company_id).order(:id), :label => "Client associé" %>
-            </div>
-        </div>
+            <% if @clients.length > 0 %>
+                <div class="form__fieldset">
+                    <div class="form__input form__input--full">
+                        <%= f.association :client, as: :select, collection: @clients, :label => "Client associé" %>
+                    </div>
+                </div>
+            <% else %>
+                <div class="form__fieldset">
+                    <div class="form__input form__input--full">
+                        <%= f.association :client, as: :select, collection: @clients, :label => "Client associé", :disabled => true %>
+                        <div class="form__helper">
+                            <div class="info-msg">Pas de clients enregistrés</div>
+                            <a class="form-link-helper" href="/clients?addPanel=true">+ Ajouter un client</a>
+                        </div>
+                    </div>
+                </div>
+            <% end %>
         <% else %>
         <%= f.hidden_field :client_id, :value => @client.id %>
         <% end %>
+       
 
         <%= f.hidden_field :company_id, :value => current_user.company_id %>
         <%= f.hidden_field :user_id, :value => current_user.id %>
+
+
+        <% if @clients.length > 0 %>
         <div class="form__actions">
             <%= f.button :submit, :value => 'Ajouter' %>
         </div>   
+        <% end %>
     <% end %>
 </div>

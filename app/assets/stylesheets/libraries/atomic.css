@@ -283,6 +283,12 @@ nav:not(.custom) ul li a {
     line-height:1;
 }
 
+.info-msg {
+    color:var(--color-grey-dark);
+    font-size:14px;
+    font-style: italic;
+}
+
 /* List Infos */
 ul.list-infos {
     list-style:none;

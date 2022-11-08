@@ -3,3 +3,7 @@ $('#renderClientsList').append('<%= j render 'clientList', :client => @client  %
 
 $('.panel').removeClass('slided');
 $('#add_client').trigger("reset");
+
+if ($('.no-clients').length) {
+    $('.no-clients').remove()
+}

@@ -10,7 +10,7 @@
     <div class="container">
         <div class="row">
 
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-6">
                 <div class="board-info-card">
                     <span class="board-info-card__exerg info-number"><%= @clients_company.size %></span>
                     <div class="board-info-card__heading">
@@ -27,7 +27,7 @@
                                 </li>
                             <% end %>
                             <% if @clients_company.length == 0 %>
-                            <a class="btn-add btn-add--small" href="/clients?addClient=true">Ajouter un client</a>
+                            <a class="btn-add btn-add--small" href="/clients?addPanel=true">Ajouter un client</a>
                             <% end %>
                         </ul>
                     </div>
@@ -43,7 +43,7 @@
                 </div>
             </div>
 
-            <div class="col-12 col-lg-4">
+            <div class="col-12 col-lg-6">
                 <div class="board-info-card">
                     <span class="board-info-card__exerg info-number"><%= @designs_company.size %></span>
                     <div class="board-info-card__heading">
@@ -60,7 +60,7 @@
                                 </li>
                             <% end %>
                             <% if @designs_company.length == 0 %>
-                            <a class="btn-add btn-add--small" href="/designs?addDesign=true">Ajouter une maquette</a>
+                            <a class="btn-add btn-add--small" href="/designs?addPanel=true">Ajouter une maquette</a>
                             <% end %>
                         </ul>
                     </div>
@@ -68,29 +68,6 @@
                     <div class="board-info-card__actions txt-align-right mt24">
                         <a class="btn2" href="<%= designs_path %>">
                             Toutes les maquettes
-                            <span class="btn2__icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-lg-4">
-                <div class="board-info-card">
-                    <span class="board-info-card__exerg info-number">0</span>
-                    <div class="board-info-card__heading">
-                        Utilisateurs 
-                    </div>
-                    <div class="board-info-card__infos">
-                        <ul class="list-infos">
-                            <!-- List users company -->
-                        </ul>
-                    </div>
-
-                    <div class="board-info-card__actions txt-align-right mt24">
-                        <a class="btn2" href="<%= designs_path %>">
-                            Tous les utilisateurs
                             <span class="btn2__icon">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M342.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L274.7 256 105.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>
                             </span>
