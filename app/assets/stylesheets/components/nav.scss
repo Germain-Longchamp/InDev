@@ -1,0 +1,14 @@
+/* Simple/Default Navigation */
+nav:not(.custom) ul {
+    list-style:none;
+}
+nav:not(.custom) ul li {
+    display:inline-block;
+    padding:0 8px;
+}
+
+nav:not(.custom) ul li a {
+    text-decoration:none;
+    color:var(--color-body);
+    font-size:14px;
+}

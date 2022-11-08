@@ -7,8 +7,39 @@
     border-bottom:1px solid var(--color-grey-light);
 }
 
-.header nav ul {
-    text-align:right
+.header {
+    nav {
+        ul {
+            text-align:right
+        }
+    }
+}
+
+.header__actions {
+    nav {
+        ul {
+            display:flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+
+            li.link-item {
+                a {
+                    text-transform: uppercase;
+                    font-size:14px;
+                    color:var(color-grey-dark);
+                    transition:color .5s ease;
+
+                    &:hover {
+                        color:var(--color-blue);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.header__user-actions {
+    margin-left:30px;
 }
 
 /* Simple/Default Logo App */
@@ -17,8 +48,10 @@
     font-weight:600;
     transition:opacity .2s ease;
 }
-.logo-app a {
-    text-decoration:none;
+.logo-app {
+    a {
+        text-decoration:none;
+    }
 }
 
 .logo-app__text {
@@ -34,8 +67,80 @@
     font-weight:300;
 }
 
-.idea-mention img {
-    height:18px;
-    width:auto;
-    margin-left:2px;
+.idea-mention {
+    img {
+        height:18px;
+        width:auto;
+        margin-left:2px;
+    }
+}
+
+/* User avatar */
+.user-avatar {
+    position:relative;
+    display:block;
+    height:30px;
+    width:30px;
+    overflow:hidden;
+    background:var(--color-grey-light);
+    border: 1px solid var(--color-grey-half);
+    border-radius:50%;
+
+    svg {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        height: 20px;
+        width: 18px;
+        opacity: .4;
+        left: calc(50% - 9px);
+    }
+}
+
+/* User actions */
+.user-actions {
+    position:relative;
+
+    &:hover {
+        .user-actions__dropdown {
+            opacity:1;
+            visibility:visible;
+        }
+    }
+}
+.user-actions__dropdown {
+    position:absolute;
+    top:30px;
+    right:0px;
+    min-width:180px;
+    padding:8px 12px;
+    background:var(--color-white);
+    box-shadow: 0px 40px 80px rgba(0,0,0,.1);
+    opacity: 0;
+    visibility: hidden;
+    transition:all .3s ease;
+}
+.user-actions__dropdown:before {
+    content:"";
+    position:absolute;
+    z-index:3;
+    width:30px;
+    height:10px;
+    top:-5px;
+    right:0px;
+    background:transparent;
+}
+.user-actions__item {
+    a {
+        display:block;
+        word-break: keep-all;
+        padding:8px 16px;
+        transition:all .3s ease;
+    }
+
+    &:hover {
+        a {
+            background:var(--color-grey-light);
+        }
+    }
 }
