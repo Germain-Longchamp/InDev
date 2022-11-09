@@ -1,42 +1,58 @@
 /* List Infos */
 ul.list-infos {
     list-style:none;
+
+    li {
+        font-size:14px;
+        transition:background .3s ease-out;
+
+        &:not(:last-child) {
+            border-bottom:1px solid var(--color-grey-light);
+        }
+
+        a {
+            position:relative;
+            display:block;
+            padding:4px;
+
+            span {
+                font-size:12px;
+                color:var(--color-grey-half);
+                margin-left:12px;
+            }
+
+            svg {
+                height:14px;
+                width:14px;
+                position:absolute;
+                right:4px;
+                top:calc(50% - 7px);
+                opacity:0;
+                transition:opacity .2s ease;
+
+                path {
+                    fill:var(--color-grey-half);
+                }
+            }
+        }
+    }
 }
 
-ul.list-infos li {
-    font-size:14px;
-    transition:background .3s ease-out;
-}
-
-ul.list-infos li:not(:last-child) {
-    border-bottom:1px solid var(--color-grey-light);
-}
-
-ul.list-infos li a {
-    position:relative;
-    display:block;
-    padding:4px;
-}
-
-ul.list-infos li a svg {
-    height:14px;
-    width:14px;
-    position:absolute;
-    right:4px;
-    top:calc(50% - 7px);
-    opacity:0;
-    transition:opacity .2s ease;
-}
-ul.list-infos li a svg path {
-    fill:var(--color-grey-half);
-}
 
 @media (min-width:992px) {
-    ul.list-infos li:hover {
-        background:var(--color-grey-light);
+    ul.list-infos {
+        li:hover {
+            background:var(--color-grey-light);
+        }
     }
 
-    ul.list-infos li:hover a svg {
-        opacity:1;
+    ul.list-infos {
+        li:hover {
+            a {
+                svg {
+                    opacity:1;
+                }
+            }
+        }
     }
 }
