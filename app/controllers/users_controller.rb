@@ -29,6 +29,7 @@ class UsersController < ApplicationController
     
     respond_to do |format|
       if @user.save
+        format.js
         format.json { render json: @user.id }
       else
         format.html { render :new, status: :unprocessable_entity }

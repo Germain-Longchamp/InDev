@@ -37,7 +37,9 @@
         <div class="row" id="renderDesigns">
             <%= render @designs %>
         </div>
+    </div>
 
+    <div class="container no-designs">
         <% if @designs.length() == 0 %>
         <div class="row">
             <!--Error Message-->
@@ -48,17 +50,18 @@
             </div>
         </div>
         <% end %>
+    </div>
 
-        <div class="panel panel-right" data-panel="add-design">
-            <div class="panel__overlay"></div>
-            <div class="panel__column">
-                <div class="panel__close">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
-                </div>
-                <div class="panel-column__inner">
-                    <%= render './designs/form', design: @design %>
-                </div>
+    <div class="panel panel-right" data-panel="add-design">
+        <div class="panel__overlay"></div>
+        <div class="panel__column">
+            <div class="panel__close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="panel-column__inner">
+                <%= render './designs/form', design: @design %>
             </div>
         </div>
     </div>
+    
 </section>

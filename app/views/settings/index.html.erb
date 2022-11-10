@@ -1,0 +1,56 @@
+<section class="sec-layout sec-settings-index">
+    <div class="container">
+        <div class="row mb40">
+            <div class="col-12">
+                <div class="breadcrumbs">
+                    <ul>
+                        <li>
+                            <a href="<%= board_path %>">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 278.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"/></svg>
+                                Tableau de bord
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-8">
+                <h1>Paramètres</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="users-block">
+                    <div class="users-block__heading">
+                        <span>
+                            Utilisateurs
+                        </span>
+                        <a class="btn-add btn-add--small js-show-panel" data-target="add-user">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                            Ajouter un utilisateur
+                        </a>
+                    </div>
+                    <div class="users-block__list" id="renderUsers">
+                        <%= render @users %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="panel panel-right" data-panel="add-user">
+        <div class="panel__overlay"></div>
+        <div class="panel__column">
+            <div class="panel__close">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg>
+            </div>
+            <div class="panel-column__inner">
+                <%= render './users/form', user: @user %>
+            </div>
+        </div>
+    </div>
+</section>
