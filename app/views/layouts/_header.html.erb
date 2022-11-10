@@ -25,10 +25,10 @@
                 <a href="<%= board_path %>">Tableau de bord</a>
               </li>
               <li class="link-item">
-                <a href="<%= clients_path %>">Clients</a>
+                <a href="<%= designs_path %>">Maquettes</a>
               </li>
               <li class="link-item">
-                <a href="<%= designs_path %>">Maquettes</a>
+                <a href="<%= clients_path %>">Clients</a>
               </li>
               <li>
                 <div class="header__user-actions user-actions">
@@ -40,7 +40,7 @@
                       <a href="<%= edit_user_registration_path %>">Mon compte</a>
                     </div>
                     <div class="user-actions__item">
-                      <a href="">Paramètres</a>
+                      <a href="<%= settings_path %>">Paramètres</a>
                     </div>
                     <div class="user-actions__item">
                       <%= link_to raw('Se déconnecter'), destroy_user_session_path, method: :delete %>

@@ -5,21 +5,23 @@
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form__fieldset">
             <div class="form__input form__input--full">
-            <%= f.input :name, :label => 'Nom', required: :true %>
+            <%= f.input :name, :label => 'Nom', :placeholder => 'Blog Post, Website Page...', required: :true %>
             </div>
         </div>
         <div class="form__fieldset">
             <div class="form__input form__input--full">
-            <%= f.input :url, :label => 'Lien', required: :true %>
+            <%= f.input :url, :label => 'Lien', :placeholder => 'https://xd.adobe.com/...', required: :true %>
             </div>
         </div>
-        
         
         <% if request.path.include?('designs') %>
             <% if @clients.length > 0 %>
                 <div class="form__fieldset">
                     <div class="form__input form__input--full">
                         <%= f.association :client, as: :select, collection: @clients, :label => "Client associé" %>
+                        <div class="form__helper">
+                            <a class="form-link-helper" href="/clients?addPanel=true">+ Ajouter un client</a>
+                        </div>
                     </div>
                 </div>
             <% else %>

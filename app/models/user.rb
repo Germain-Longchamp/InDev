@@ -8,6 +8,10 @@ class User < ApplicationRecord
   has_many :designs
 
   def fullname
-    return self.firstname + ' ' + self.lastname
+    if self.firstname.present? and self.lastname.present?
+      return self.firstname + ' ' + self.lastname
+    else
+      return self.email
+    end
   end
 end

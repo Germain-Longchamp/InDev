@@ -1,9 +1,30 @@
-<%= simple_form_for @user do |f| %>
+<div class="form form-create-design">
+    <div class="form__heading">Ajouter un utilisateur</div>
 
-    <%= f.input :email, :label => "Email"  %>
+    <%= simple_form_for(@user, remote: true, html: { id: :add_user }) do |f| %>
 
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+                <%= f.input :email, :label => "Email", required: :true  %>
+            </div>
+        </div>
 
-   <%= f.button :submit, 'Mettre à jour'  %>
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+                <%= f.input :password,
+                    required: true,
+                    hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                    input_html: { autocomplete: "new-password" } %>
+            </div>
+        </div>
+        
+        <%= f.hidden_field :company_id,
+                    as: :numeric, 
+                    :value => current_user.company_id %>
 
-
-<% end %>
+        
+        <div class="form__actions">
+            <%= f.button :submit, 'Ajouter' %>
+        </div>   
+    <% end %>    
+</div>
