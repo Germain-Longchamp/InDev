@@ -6,25 +6,29 @@
             <div class="form__heading">Connexion</div>
             <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
               <div class="form__fieldset">
-                <div class="form__input form__input--full">
+                <div class="form__input form__input--full form__input--hasicon">
                   <%= f.input :email,
-                            required: false,
+                            required: true,
                             autofocus: true,
                             input_html: { autocomplete: "email" } %>
+                  <img src="<%= asset_path 'envelope-solid.svg' %>">
                   </div>
+                  
               </div>
 
               <div class="form__fieldset">
-                <div class="form__input form__input--full">
+                <div class="form__input form__input--full form__input--hasicon">
                   <%= f.input :password,
-                          required: false,
-                          input_html: { autocomplete: "current-password" } %>
+                          required: true,
+                          input_html: { autocomplete: "current-password" }, 
+                          :label => 'Mot de passe' %>
+                  <img src="<%= asset_path 'lock-solid.svg' %>">
                   </div>
               </div>
 
               <div class="form__fieldset">
                 <div class="form__input form__input--full">
-                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  <%= f.input :remember_me, :label => 'Conserver mes accès', as: :boolean if devise_mapping.rememberable? %>
                 </div>
               </div>
               

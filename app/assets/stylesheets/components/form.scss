@@ -27,6 +27,11 @@
         text-transform:uppercase;
         margin-bottom:4px;
 
+        &[for="user_remember_me"] {
+            font-size:12px;
+            text-transform: none;
+        }
+
         abbr {
             text-decoration:none;
             order:2;
@@ -140,5 +145,23 @@
     .chosen-single {
         background-image:none;
 
+    }
+}
+
+
+.form__input--hasicon {
+    position:relative;
+
+    img {
+        position: absolute;
+        height: 14px;
+        width: auto;
+        bottom: 13px;
+        left: 20px;
+        opacity:.5
+    }
+
+    input {
+        padding:6px 6px 6px 40px;
     }
 }
