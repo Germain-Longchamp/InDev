@@ -3,7 +3,7 @@ class BoardController < ApplicationController
 
     def index 
         @clients = Client.where(:company_id => current_user.company_id)
-        @designs = Design.where(:company_id => current_user.company_id)
+        @designs = Design.where(:company_id => current_user.company_id).order('designs.created_at DESC')
         @users = User.where(:company_id => current_user.company_id)
     end
 end
