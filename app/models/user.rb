@@ -14,4 +14,5 @@ class User < ApplicationRecord
       return self.email
     end
   end
+    
 end

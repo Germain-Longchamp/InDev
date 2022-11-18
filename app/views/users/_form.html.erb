@@ -5,7 +5,13 @@
 
         <div class="form__fieldset">
             <div class="form__input form__input--full">
-                <%= f.input :email, :label => "Email", required: :true  %>
+                <%= f.input :email, :label => "Email", required: :true, :placeholder => "john.doe@email.fr"  %>
+            </div>
+        </div>
+
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+                <%= f.input :role, collection: @users_role, prompt: "Sélectionner" %>
             </div>
         </div>
 
@@ -14,14 +20,15 @@
                 <%= f.input :password,
                     required: true,
                     hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                    input_html: { autocomplete: "new-password" } %>
+                    input_html: { autocomplete: "new-password" }, 
+                    :placeholder => "xxxxxx" %>
             </div>
         </div>
         
+
         <%= f.hidden_field :company_id,
                     as: :numeric, 
                     :value => current_user.company_id %>
-
         
         <div class="form__actions">
             <%= f.button :submit, 'Ajouter' %>

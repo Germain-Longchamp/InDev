@@ -42,6 +42,13 @@
                     <%= f.input :email, required: true %>
                   </div>
               </div>
+
+              <div class="form__fieldset">
+                  <div class="form__input form__input--full">
+                      <%= f.input :role, collection: ['Account', 'Développeur', 'Designer', 'Marketing'], prompt: "Sélectionner" %>
+                  </div>
+              </div>
+
               <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
               <div class="form__fieldset">
                   <div class="form__input form__input--full">
@@ -49,6 +56,7 @@
                   </div>
               </div>
               <% end %>
+
               <div class="form__fieldset">
                   <div class="form__input form__input--full">
                     <%= f.input :password,
