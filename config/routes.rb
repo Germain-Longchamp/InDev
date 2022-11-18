@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get 'settings', to: 'settings#index'
 
   # Routes Users
-  devise_for :users, :path => 'account'
+  devise_for :users, :path => 'account', :controllers => { :registrations => :registrations }
   resources :users
 
   # Routes Clients

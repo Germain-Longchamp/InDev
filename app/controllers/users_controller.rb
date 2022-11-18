@@ -20,6 +20,8 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+
+    @users_role = ['Account', 'Développeur', 'Designer', 'Marketing']
   end
 
   # POST /users or /users.json
@@ -42,7 +44,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to root_path, notice: 'Utilisateur Mis à jour.' }
+        format.html { redirect_to settings_path, notice: 'Utilisateur Mis à jour.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +55,11 @@ class UsersController < ApplicationController
 
   def destroy
     @user.destroy
-    redirect_to company_path(current_user.company_id)
+
+    respond_to do |format|
+      format.js
+      format.json { head :no_content }
+    end
   end
 
  private
@@ -63,6 +69,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :email, :password, :company_id)
+    params.require(:user).permit(:firstname, :lastname, :email, :password, :company_id, :role)
   end
 end

@@ -1,0 +1,14 @@
+<div class="form form-create-design">
+    <%= simple_form_for(@user, remote: true, html: { id: :add_user }) do |f| %>
+
+        <div class="form__fieldset">
+            <div class="form__input form__input--full">
+                <%= f.input :role, collection: @users_role, prompt: "Sélectionner", selected: @user.role %>
+            </div>
+        </div>
+       
+        <div class="form__actions">
+            <%= f.button :submit, 'Mettre à jour' %>
+        </div>   
+    <% end %>    
+</div>

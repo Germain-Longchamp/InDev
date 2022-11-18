@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
     
     def after_sign_in_path_for(resource)
         board_path
-   end
-
+    end
+    
     protected
     def configure_permitted_parameters
-        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password, :company_id)}
-        devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password, :current_password, :company_id)}
+        devise_parameter_sanitizer.permit(:sign_up) { |u| u.permit(:firstname, :lastname, :email, :password, :role, :company_id)}
+        devise_parameter_sanitizer.permit(:account_update) { |u| u.permit(:firstname, :lastname, :email, :password, :current_password, :company_id, :role)}
    end
 end

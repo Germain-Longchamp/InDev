@@ -8,3 +8,9 @@
     font-size:28px;
     color:var(--color-grey-dark);
 }
+
+.sec-layout .baseline {
+    margin-top:16px;
+    color:var(--color-grey-dark);
+    font-size:14px;
+}

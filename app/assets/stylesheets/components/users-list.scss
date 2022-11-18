@@ -1,46 +1,104 @@
 .users-block {
-    background:var(--color-white);
-    padding:16px 32px;
-    border-radius:8px;
+    background: var(--color-white);
+    padding: 16px 32px;
+    border-radius: 8px;
 }
 
 .users-block__heading {
-    display:flex;
+    display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom:24px;
+    margin-bottom: 24px;
 
     span {
-        font-size:20px;
-        font-weight:bold;
-        
+        font-size: 20px;
+        font-weight: bold;
     }
-    
+}
+
+.users-block__role {
+    padding: 0 8px;
+
+    &:not(:last-child) {
+        margin-bottom: 24px;
+    }
+}
+
+.users-block__role-heading {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--color-grey-half);
+    margin-bottom: 8px;
 }
 
 .user-block {
-    display:flex;
-    align-items:center;
-    padding:6px 10px;
-    border-radius:3px;
-    transition:background .2s ease;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 3px;
+    transition: background 0.2s ease;
 
     &:not(:last-child) {
-        border-bottom:1px solid var(--color-grey-light);
+        border-bottom: 1px solid var(--color-grey-light);
     }
 
     &:hover {
-        background:var(--color-grey-light);
+        background: var(--color-grey-light);
+
+        .user-block__actions {
+            opacity: 1;
+        }
     }
 }
 
 .user-block__name {
-    font-weight:bold;
-    min-width:300px;
-    padding-right:20px;
+    font-weight: bold;
+    min-width: 300px;
+    padding-right: 20px;
+    font-size: 15px;
 }
 
 .user-block__email {
-    font-size:14px;
-    font-weight:300;
+    font-size: 12px;
+    font-weight: 300;
+    min-width: 250px;
+}
+
+.user-block__role {
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.user-block__actions {
+    position: absolute;
+    right: 16px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    a {
+        &:not(:last-child) {
+            margin-right: 8px;
+        }
+        svg {
+            height: 16px;
+            width: auto;
+        }
+
+        &.edit {
+            svg {
+                path {
+                    fill: var(--color-grey-dark);
+                }
+            }
+        }
+
+        &.delete {
+            svg {
+                path {
+                    fill: var(--color-error);
+                }
+            }
+        }
+    }
 }
