@@ -1,3 +1,9 @@
+<%# User Interaction Messages %>
+<%# Create User success %>
+<div class="user-message-success"></div>
+
+
+<%# Start section %>
 <section class="sec-layout sec-settings-index">
     <div class="container">
         <div class="row mb40">
@@ -19,7 +25,6 @@
         </div>
     </div>
 
-
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -35,41 +40,45 @@
                         </a>
                     </div>
                     
-                    <% if @developer_users.length > 0 %>
                     <div class="users-block__role">
                         <div class="users-block__role-heading">Équipe Développeurs <span>(<%= @developer_users.length %>)</span></div>
-                        <div class="users-block__list" id="renderUsers">
+                        <div class="users-block__list" id="renderDeveloperUsers">
+                            <% if @developer_users.length == 0 %>
+                            <span class="info-msg">Pas d'utilisateurs</span>
+                            <% end %>
                             <%= render @developer_users %>
                         </div>
                     </div>
-                    <% end %>
                     
-                    <% if @designer_users.length > 0 %>
                     <div class="users-block__role">
                         <div class="users-block__role-heading">Équipe Designer <span>(<%= @designer_users.length %>)</span></div>
-                        <div class="users-block__list" id="renderUsers">
+                        <div class="users-block__list" id="renderDesignerUsers">
+                            <% if @designer_users.length == 0 %>
+                                <span class="info-msg">Pas d'utilisateurs</span>
+                            <% end %>
                              <%= render @designer_users %>
                         </div>
                     </div>
-                    <% end %>
 
-                    <% if @marketing_users.length > 0 %>
                     <div class="users-block__role">
                         <div class="users-block__role-heading">Équipe Marketing <span>(<%= @marketing_users.length %>)</span></div>
-                        <div class="users-block__list" id="renderUsers">
+                        <div class="users-block__list" id="renderMarketingUsers">
+                            <% if @marketing_users.length == 0 %>
+                                <span class="info-msg">Pas d'utilisateurs</span>
+                            <% end %>
                              <%= render @marketing_users %>
                         </div>
                     </div>
-                    <% end %>
 
-                    <% if @account_users.length > 0 %>
                     <div class="users-block__role">
                         <div class="users-block__role-heading">Équipe Account <span>(<%= @account_users.length %>)</span></div>
-                        <div class="users-block__list" id="renderUsers">
+                        <div class="users-block__list" id="renderAccountUsers">
+                            <% if @account_users.length == 0 %>
+                                <span class="info-msg">Pas d'utilisateurs</span>
+                            <% end %>
                              <%= render @account_users %>
                         </div>
                     </div>
-                    <% end %>
 
                 </div>
             </div>

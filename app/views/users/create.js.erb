@@ -1,3 +1,27 @@
-$('#renderUsers').append('<%= j render @user %>');
 $('.panel').removeClass('slided');
 $('#add_user').trigger("reset");
+
+let userRole = '<%= @user.role %>';
+
+//console.log(userRole)
+
+switch (userRole) {
+    case ('Développeur') :
+    $('#renderDeveloperUsers').append('<%= j render @user %>');
+    break;
+
+    case ('Designer') :
+    $('#renderDesignerUsers').append('<%= j render @user %>');
+    break;
+
+    case ('Account') :
+    $('#renderAccountUsers').append('<%= j render @user %>');
+    break;
+
+    case ('Marketing') :
+    $('#renderMarketingUsers').append('<%= j render @user %>');
+    break;
+
+    default:
+    $('#renderDeveloperUsers').append('<%= j render @user %>');
+}

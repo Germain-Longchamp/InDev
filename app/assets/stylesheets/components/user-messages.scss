@@ -1,0 +1,25 @@
+.user-message-success {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--color-success);
+    padding: 8px 32px;
+
+    .user-message-success__txt {
+        color: var(--color-white);
+        font-weight: 300;
+    }
+
+    .user-message-success__close {
+        svg {
+            height: 18px;
+            width: auto;
+        }
+
+        path {
+            fill: var(--color-white);
+        }
+    }
+}
