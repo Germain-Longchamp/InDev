@@ -1,11 +1,14 @@
-.user-message-success {
+.user-message {
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
-    background: var(--color-success);
     padding: 8px 32px;
+
+    &.user-message--success {
+        background: var(--color-success);
+    }
 
     .user-message-success__txt {
         color: var(--color-white);
