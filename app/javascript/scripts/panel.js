@@ -1,5 +1,3 @@
-//console.log('dans panel js')
-
 function showPanel() {
     let targetData = $(this).attr('data-target')
     let panelToShow = $('.panel[data-panel="' + targetData + '"]')

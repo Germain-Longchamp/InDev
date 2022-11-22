@@ -1,4 +1,4 @@
-//console.log('dans main JS')
+import * as functions from './functions.js';
 
 $(document).on('ready turbolinks:load', function () {
 
@@ -17,6 +17,5 @@ $(document).on('ready turbolinks:load', function () {
     $(document).on('click', '.user-message__close', function () {
         $(this).parent().fadeOut();
     });
-
 
 });

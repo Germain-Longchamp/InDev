@@ -7,15 +7,13 @@ require("channels")
 //= require jquery-ui
 //= require jquery.turbolinks
 //= require jquery_ujs
-//= require_tree .
 
 import $ from 'jquery';
 global.$ = jQuery;
-
 import "chosen-js"
 
-import "../scripts/cookies.js"
-import "../scripts/main.js"
-import "../scripts/panel.js"
-import "../scripts/create-account.js"
-import "../scripts/clients-index.js"
+require("scripts/main")
+require("scripts/cookies")
+require("scripts/panel")
+require("scripts/create-account")
+require("scripts/clients-index")
