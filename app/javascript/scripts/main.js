@@ -13,4 +13,10 @@ $(document).on('ready turbolinks:load', function () {
         });
     }
 
+    // ----- Close User messages
+    $(document).on('click', '.user-message__close', function () {
+        $(this).parent().fadeOut();
+    });
+
+
 });

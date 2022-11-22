@@ -5,6 +5,14 @@
     left: 0;
     width: 100%;
     padding: 8px 32px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+
+    &.displayed {
+        visibility: visible;
+        opacity: 1;
+    }
 
     &.user-message--success {
         background: var(--color-success);
@@ -15,7 +23,12 @@
         font-weight: 300;
     }
 
-    .user-message-success__close {
+    .user-message__close {
+        position: absolute;
+        right: 32px;
+        top: calc(50% - 9px);
+        cursor: pointer;
+
         svg {
             height: 18px;
             width: auto;
