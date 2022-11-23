@@ -1,3 +1,4 @@
 $('.card-design__delete').bind('ajax:success', function() {
-	$(this).parents('.col-lg-3').fadeOut();
+	$('.popin').removeClass('displayed');
+	$(this).parents('.col-card-design').fadeOut();
 });
