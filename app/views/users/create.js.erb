@@ -1,12 +1,8 @@
 $('.panel').removeClass('slided');
 $('#add_user').trigger("reset");
 
-const userRole = '<%= @user.role %>';
-const userEmail = '<%= @user.email %>';
 
-//console.log(userRole)
-
-switch (userRole) {
+switch ('<%= @user.role %>') {
     case ('Développeur') :
     $('#renderDeveloperUsers').append('<%= j render @user %>');
     $('#renderDeveloperUsers').find('.info-msg').remove()
