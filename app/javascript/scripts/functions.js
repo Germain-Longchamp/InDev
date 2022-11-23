@@ -21,3 +21,19 @@ export function showUserMessage(message) {
         }, 5000);
 }
 window.showUserMessage = showUserMessage;
+
+//--- Go tu url
+export function goToUrl(url) {
+    if (url) {
+        window.location = url;
+    }
+    return false;
+}
+
+//--- open Url in new tab
+export function openUrlInNewTab(url) {
+    if (url) {
+        window.open(url, '_blank')
+    }
+    return false;
+}

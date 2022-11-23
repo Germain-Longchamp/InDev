@@ -1,3 +1,4 @@
 $('.user__delete').bind('ajax:success', function() {
+	$('.popin').removeClass('displayed');
 	$(this).parents('.user-block').fadeOut();
 });

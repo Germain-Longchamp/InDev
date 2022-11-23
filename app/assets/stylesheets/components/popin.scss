@@ -1,10 +1,10 @@
 .popin {
     position: fixed;
     z-index: 1000;
-    top: calc(50% - 80px);
+    top: calc(50% - 100px);
     left: calc(50% - 150px);
     width: 300px;
-    height: 160px;
+    height: 200px;
     display: flex;
     align-items: center;
     background: var(--color-white);
@@ -26,6 +26,12 @@
     padding: 16px;
     text-align: center;
     width: 100%;
+}
+
+.popin__reminder {
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--color-grey-dark);
 }
 
 .popin__txt {

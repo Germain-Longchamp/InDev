@@ -1,5 +1,5 @@
 $('.card-client__delete').bind('ajax:success', function() {
-	let dataName = $(this).parents('.col-12').attr('data-name')
-	
-	$('.col-12[data-name="' + dataName + '"]').fadeOut();
+	$('.popin').removeClass('displayed');
+	let dataName = $(this).parents('.col-card-client').attr('data-name')
+	$('.col-card-client[data-name="' + dataName + '"]').fadeOut();
 });

@@ -28,6 +28,21 @@
                     </a>
                 </div>
             </div>
+            <div class="col-12">
+                <div class="action-bar mt16">
+                    <!--Search by name action-->
+                    <div class="action-bar__item">
+                        <div class="sa-chosen-search">
+                            <select id="searchDesign">
+                                <option></option>
+                                <% @designs.each do |design| %>
+                                <option value="<%= design.url  %>"><%= design.name %></option>
+                                <% end %>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

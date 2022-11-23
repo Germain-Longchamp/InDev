@@ -1,60 +1,69 @@
 .action-bar {
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
 }
 .action-bar__item:not(:last-child) {
-    margin-right:32px;
+    margin-right: 32px;
 }
 
 .change-layout {
-    position:relative;
-    overflow:hidden;
-    width:60px;
-    display:flex;
-    background:var(--color-white);
-    border-radius:4px;
-    cursor:pointer;
+    position: relative;
+    overflow: hidden;
+    width: 60px;
+    display: flex;
+    background: var(--color-white);
+    border-radius: 4px;
+    cursor: pointer;
 }
 
 .change-layout:before {
-    content:"";
-    display:block;
-    position:absolute;
-    top:0;
-    height:100%;
-    width:50%;
-    background:var(--color-blue);
-    transition:left .2s ease;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 50%;
+    background: var(--color-blue);
+    transition: left 0.2s ease;
 }
 
 .change-layout.left-choose:before {
-    left:0;
+    left: 0;
 }
 
 .change-layout.right-choose:before {
-    left:50%;
+    left: 50%;
 }
 
 .change-layout__col {
-    position:relative;
-    z-index:2;
-    flex:0 0 50%;
-    height:30px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    position: relative;
+    z-index: 2;
+    flex: 0 0 50%;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .change-layout__col svg {
-    height:16px;
-    width:16px;
+    height: 16px;
+    width: 16px;
 }
 
 .change-layout__col svg path {
-    fill:var(--color-body);
+    fill: var(--color-body);
 }
 
-.change-layout.left-choose .change-layout__col:first-child svg path, 
+.change-layout.left-choose .change-layout__col:first-child svg path,
 .change-layout.right-choose .change-layout__col:last-child svg path {
-    fill:var(--color-white);
+    fill: var(--color-white);
+}
+
+.sa-chosen-search {
+    min-width: 230px;
+
+    .chosen-default {
+        width: 100%;
+        display: block;
+    }
 }
