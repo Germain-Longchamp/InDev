@@ -1,5 +1,9 @@
 import * as functions from './functions.js';
 
+$(document).on('turbolinks:before-cache', function () {
+    $('.panel').removeClass('slided')
+});
+
 $(document).on('ready turbolinks:load', function () {
 
     //----- Init Chosen JS on Select Inputs
