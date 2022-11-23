@@ -4,7 +4,7 @@ class DesignsController < ApplicationController
 
   # GET /designs or /designs.json
   def index
-    @designs = Design.where(:company_id => current_user.company_id).all
+    @designs = Design.where(:company_id => current_user.company_id).order('designs.created_at DESC')
     @clients = Client.where(:company_id => current_user.company_id).order('name')
     #.order('name')
 
