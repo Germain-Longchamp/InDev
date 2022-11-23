@@ -2,65 +2,69 @@
     DEFAULT
 */
 .btn {
-    display:inline-block;
-    text-decoration:none;
-    background:var(--color-body);
-    color:var(--color-white);
-    padding:8px 24px;
-    border-radius:50px;
-    font-weight:300;
-    cursor:pointer;
-    transition:all .3s ease;
+    display: inline-block;
+    text-decoration: none;
+    background: var(--color-body);
+    color: var(--color-white);
+    padding: 8px 24px;
+    border-radius: 50px;
+    font-weight: 300;
+    cursor: pointer;
+    transition: all 0.3s ease;
     transition-property: transform, background;
 }
-
-
 
 /*
     COLORS VARIATIONS
 */
 .btn.btn--blue-solid {
-    background:var(--color-blue);
+    background: var(--color-blue);
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .btn.btn--blue-solid:hover {
-        background:var(--color-blue-dark);
+        background: var(--color-blue-dark);
     }
 }
 
 .btn.btn--magenta-solid {
-    background:var(--color-magenta);
+    background: var(--color-magenta);
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .btn.btn--magenta-solid:hover {
-        background:var(--color-magenta-dark);;
+        background: var(--color-magenta-dark);
     }
 }
 
+.btn.btn--error-solid {
+    background: var(--color-error);
+}
 
+@media (min-width: 992px) {
+    .btn.btn--error-solid:hover {
+        background: var(--color-error-dark);
+    }
+}
 
 /*
     SIZES VARIATIONS
 */
 .btn.btn--big {
-    font-size:18px;
-    padding:10px 32px;
+    font-size: 18px;
+    padding: 10px 32px;
 }
 .btn.btn--small {
-    font-size:12px;
-    padding:6px 16px;
+    font-size: 12px;
+    padding: 6px 16px;
 }
-
-
 
 /*
     ANIMATIONS
 */
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .btn.btn--up-animate:hover {
-        transform:translateY(-2px);
+        transform: translateY(-2px);
     }
 }
 
@@ -68,68 +72,64 @@
     DEFAULT 2
 */
 .btn2 {
-    display:inline-flex;
-    font-size:14px;
-    padding:4px 8px;
-    text-decoration:none;
-    color:var(--color-body);
-    background:var(--color-grey-light);
-    border-radius:3px;
-    border:1px solid var(--color-grey-half);
-    transition:all .3s ease;
+    display: inline-flex;
+    font-size: 14px;
+    padding: 4px 8px;
+    text-decoration: none;
+    color: var(--color-body);
+    background: var(--color-grey-light);
+    border-radius: 3px;
+    border: 1px solid var(--color-grey-half);
+    transition: all 0.3s ease;
     transition-property: background;
 }
 
 .btn2__icon {
-    margin-left:4px;
+    margin-left: 4px;
 }
 
 .btn2__icon svg {
-    height:10px;
-    width:10px;
+    height: 10px;
+    width: 10px;
 }
 
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .btn2:hover {
-        background:var(--color-grey-half);
+        background: var(--color-grey-half);
     }
 }
 
-
-
 .btn-add {
-    display:inline-block;
-    text-decoration:none;
-    background:var(--color-blue);
-    color:var(--color-white);
-    font-size:16px;
-    font-weight:300;
-    padding:6px 16px;
-    border-radius:4px;
-    cursor:pointer;
-    transition:background .2s ease;
-
+    display: inline-block;
+    text-decoration: none;
+    background: var(--color-blue);
+    color: var(--color-white);
+    font-size: 16px;
+    font-weight: 300;
+    padding: 6px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.2s ease;
 }
-.btn-add  {
+.btn-add {
     svg {
-        height:12px;
-        width:12px;
-        margin-right:6px;
+        height: 12px;
+        width: 12px;
+        margin-right: 6px;
 
         path {
-            fill:var(--color-white);
+            fill: var(--color-white);
         }
     }
 }
 
 .btn-add.btn-add--small {
-    font-size:12px;
-    padding:4px 10px;
+    font-size: 12px;
+    padding: 4px 10px;
 }
 
-
-@media (min-width:992px) {
+@media (min-width: 992px) {
     .btn-add:hover {
-        background:var(--color-blue-dark);
+        background: var(--color-blue-dark);
     }
 }
