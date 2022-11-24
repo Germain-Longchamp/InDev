@@ -22,6 +22,7 @@ export function showUserMessage(message) {
 }
 window.showUserMessage = showUserMessage;
 
+
 //--- Go tu url
 export function goToUrl(url) {
     if (url) {
@@ -29,6 +30,8 @@ export function goToUrl(url) {
     }
     return false;
 }
+window.goToUrl = goToUrl;
+
 
 //--- open Url in new tab
 export function openUrlInNewTab(url) {
@@ -37,3 +40,4 @@ export function openUrlInNewTab(url) {
     }
     return false;
 }
+window.openUrlInNewTab = openUrlInNewTab;
