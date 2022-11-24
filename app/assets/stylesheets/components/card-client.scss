@@ -35,6 +35,7 @@
     text-overflow: ellipsis;
     width: 100%;
     overflow: hidden;
+    font-weight: 500;
 }
 
 .card-client1__designs {
@@ -105,7 +106,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    font-weight: bold;
+    font-weight: 500;
 }
 .card-client2__designs {
     flex: 0 0 40%;
