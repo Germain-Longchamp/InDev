@@ -1,16 +1,14 @@
-function showPanel() {
-    let targetData = $(this).attr('data-target')
-    let panelToShow = $('.panel[data-panel="' + targetData + '"]')
-    panelToShow.addClass('slided')
-}
-
-
-function hidePanel() {
-    $(this).parents('.panel').removeClass('slided')
-}
-
-
 $(document).on('ready turbolinks:load', function () {
+    function showPanel() {
+        let targetData = $(this).attr('data-target')
+        let panelToShow = $('.panel[data-panel="' + targetData + '"]')
+        panelToShow.addClass('slided')
+    }
+
+    function hidePanel() {
+        $(this).parents('.panel').removeClass('slided')
+    }
+
     // Show Panel
     $('.js-show-panel').on('click', showPanel);
 
